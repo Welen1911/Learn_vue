@@ -1,5 +1,5 @@
 <template>
-    <input type="text" v-model="name">
+    <input type="text" :class="{ 'name': size }" v-model="name" @keyup="() => size = nameSize(name)">
     <p>{{ name }}</p>
 
     <br>
@@ -27,18 +27,54 @@
     <label for="">DO YOU WANT TO RECEIVE LOTS AND LOTS OF SPAM ? </label>
     <input type="checkbox" v-model="privacy"> I accept
     <p>{{ privacy }}</p>
+    <button @click.once="onClick(name)">Submit</button>
+    
+    <div @mouseover="onMouseOver" @mouseout="onMouseOut">
+        Mouse over
+    </div>
+    <br>
+    <form action="#" @submit.prevent="onSubmit">
+        <input type="text" @keyup.enter="$evt => console.log($evt)">
+        <button type="submit">Submit</button>
+    </form>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                name: 'Welen',
-                sports: 'Motocross',
-                newsLetter: '',
-                checkbox: ['Mobile'],
-                privacy: false,
+export default {
+    data() {
+        return {
+            name: 'Welen',
+            sports: 'Motocross',
+            newsLetter: '',
+            checkbox: ['Mobile'],
+            privacy: false,
+            size: false,
+        }
+    },
+    methods: {
+        onClick(msg) {
+            return console.log(msg);
+        },
+        nameSize(name) {
+            if (name.length < 2) {
+                return true;
             }
+            return false;
+        },
+        onMouseOver() {
+            console.log('Over!');
+        },
+        onMouseOut() {
+            console.log('Out!');
+        },
+        onSubmit() {
+            console.log('Submit!');
         }
     }
+}
 </script>
+<style>
+.name {
+    border-color: red;
+}
+</style>
