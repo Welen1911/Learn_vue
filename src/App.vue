@@ -1,15 +1,17 @@
 <template>
-  <TheHeader v-if="showHeader"/>
-  
+  <!-- <TheHeader v-if="showHeader"/> -->
+  <TheForm></TheForm>
 </template>
 
 <script>
-import TheHeader from './components/TheHeader.vue';
+// import TheHeader from './components/TheHeader.vue';
+import TheForm from './components/TheForm.vue';
 
 export default {
   name: 'App',
   components: {
-    TheHeader
+    // TheHeader
+    TheForm
   }, 
   data() {
     return {
