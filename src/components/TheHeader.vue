@@ -1,10 +1,36 @@
 <template>
     <div>
+        <h1 :class="classes2">
+            VueJs
+        </h1>
+        <h1 :class="{ 'para': true, 'title': false, 'titleHome': isHome }">
+            VueJs
+        </h1>
+        <p :class="paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar, est at placerat viverra, nunc mi
+            elementum enim, ac rhoncus quam felis vel ex. Suspendisse maximus orci justo, in lobortis diam lacinia eu. Donec
+            scelerisque, diam a dignissim convallis, elit tellus volutpat nulla, a ornare augue orci quis nunc. Donec luctus
+            diam metus, ac varius purus viverra eget. In et orci dapibus ligula vehicula feugiat sed at ipsum. Quisque
+            facilisis accumsan libero sit amet condimentum. Cras neque est, consequat rutrum venenatis eu, bibendum sed mi.
+            Praesent eget mattis urna. Nullam at felis at lectus pulvinar viverra. Nunc urna lacus, varius sed sagittis
+            eget, accumsan quis metus. Ut sed vestibulum est, sit amet lacinia libero. In tincidunt quam sed erat aliquet
+            facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet ornare consequat.
+        </p>
+        <p :style="lorem">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar, est at placerat viverra, nunc mi
+            elementum enim, ac rhoncus quam felis vel ex. Suspendisse maximus orci justo, in lobortis diam lacinia eu. Donec
+            scelerisque, diam a dignissim convallis, elit tellus volutpat nulla, a ornare augue orci quis nunc. Donec luctus
+            diam metus, ac varius purus viverra eget. In et orci dapibus ligula vehicula feugiat sed at ipsum. Quisque
+            facilisis accumsan libero sit amet condimentum. Cras neque est, consequat rutrum venenatis eu, bibendum sed mi.
+            Praesent eget mattis urna. Nullam at felis at lectus pulvinar viverra. Nunc urna lacus, varius sed sagittis
+            eget, accumsan quis metus. Ut sed vestibulum est, sit amet lacinia libero. In tincidunt quam sed erat aliquet
+            facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet ornare consequat.
+        </p>
     </div>
     <div>
         <ul v-for="obj in todos" :key="obj.id" class="todos-item">
             <img v-if="obj.img" :src="obj.img">
-            <li>{{ obj.title }} </li>
+            <li>{{ obj.id }} - {{ obj.title }} </li>
         </ul>
     </div>
 </template>
@@ -13,6 +39,14 @@
 export default {
     data() {
         return {
+
+            classes: 'title',
+            classes2: 'para',
+            isHome: true,
+            paragraph: ['text', {
+                'para': false
+            }],
+            lorem: { 'color': 'red', backgroundColor: 'black' },
             todos: [
                 {
                     "userId": 1,
@@ -53,6 +87,26 @@ export default {
 </script>
 
 <style>
+.text {
+    color: blueviolet;
+}
+
+.h1 {
+    font-size: 100px;
+}
+
+.titleHome {
+    color: aqua;
+}
+
+.para {
+    font-size: 50px;
+}
+
+.title {
+    color: blue;
+}
+
 .todos-item {
     background: #000;
     margin: 0 0 5px 0;
