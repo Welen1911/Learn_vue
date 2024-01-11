@@ -1,17 +1,21 @@
 <template>
   <!-- <TheHeader v-if="showHeader"/> -->
-  <TheForm></TheForm>
+  <!-- <TheForm></TheForm> -->
+  <br><br>
+  <TheComputed></TheComputed>
 </template>
 
 <script>
 // import TheHeader from './components/TheHeader.vue';
-import TheForm from './components/TheForm.vue';
+// import TheForm from './components/TheForm.vue';
+import TheComputed from './components/TheComputed.vue';
 
 export default {
   name: 'App',
   components: {
     // TheHeader
-    TheForm
+    // TheForm,
+    TheComputed,
   }, 
   data() {
     return {
