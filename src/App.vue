@@ -2,20 +2,23 @@
   <!-- <TheHeader v-if="showHeader"/> -->
   <!-- <TheForm></TheForm> -->
   <br><br>
-  <TheComputed></TheComputed>
+  <!-- <TheComputed></TheComputed> -->
+  <TheWatch/>
 </template>
 
 <script>
 // import TheHeader from './components/TheHeader.vue';
 // import TheForm from './components/TheForm.vue';
-import TheComputed from './components/TheComputed.vue';
+// import TheComputed from './components/TheComputed.vue';
+import TheWatch from './components/TheWatch.vue';
 
 export default {
   name: 'App',
   components: {
     // TheHeader
     // TheForm,
-    TheComputed,
+    // TheComputed,
+    TheWatch
   }, 
   data() {
     return {
