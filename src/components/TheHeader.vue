@@ -1,8 +1,11 @@
 <template>
     <div>
-        <h1 :class="classes2">
-            VueJs
+        <h1 :class="classes2" v-if="$slots.title">
+            <slot name="title" />         
         </h1>
+            <slot name="description" />         
+            <slot />         
+        
         <h1 :class="{ 'para': true, 'title': false, 'titleHome': isHome }">
             VueJs
         </h1>

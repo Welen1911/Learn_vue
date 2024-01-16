@@ -1,5 +1,17 @@
 <template>
-  <!-- <TheHeader v-if="showHeader"/> -->
+  <!-- <TheHeader v-if="showHeader">
+  
+    <template v-slot:title>
+      Titulo
+    </template>
+    <template v-slot:description>
+     <div> Descrição</div>
+    </template>
+    lorem ipsolum!
+
+  </TheHeader> -->
+  <div class="card">Teste</div>
+  <BaseCard></BaseCard>
   <!-- <TheForm></TheForm> -->
   <br><br>
   <!-- <TheComputed></TheComputed> -->
@@ -10,15 +22,17 @@
 // import TheHeader from './components/TheHeader.vue';
 // import TheForm from './components/TheForm.vue';
 // import TheComputed from './components/TheComputed.vue';
-import TheWatch from './components/TheWatch.vue';
+// import TheWatch from './components/TheWatch.vue';
+import BaseCard from './components/BaseCard.vue';
 
 export default {
   name: 'App',
   components: {
-    // TheHeader
+    // TheHeader,
     // TheForm,
     // TheComputed,
-    TheWatch
+    // TheWatch
+    BaseCard
   }, 
   data() {
     return {
@@ -28,6 +42,9 @@ export default {
       showName: true,
       accessLevel: ''
     }
+  },
+  mounted() {
+    console.log(this.$slots);
   }
 }
 </script>
