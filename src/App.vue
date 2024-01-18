@@ -1,21 +1,7 @@
 <template>
-  <!-- <TheHeader v-if="showHeader">
-  
-    <template v-slot:title>
-      Titulo
-    </template>
-    <template v-slot:description>
-     <div> Descrição</div>
-    </template>
-    lorem ipsolum!
-
-  </TheHeader> -->
-  <div class="card">Teste</div>
-  <BaseCard></BaseCard>
-  <!-- <TheForm></TheForm> -->
-  <br><br>
-  <!-- <TheComputed></TheComputed> -->
-  <TheWatch/>
+  <BaseAlert variant="sucess">
+    Houve um erro!
+  </BaseAlert>
 </template>
 
 <script>
@@ -23,7 +9,8 @@
 // import TheForm from './components/TheForm.vue';
 // import TheComputed from './components/TheComputed.vue';
 // import TheWatch from './components/TheWatch.vue';
-import BaseCard from './components/BaseCard.vue';
+// import BaseCard from './components/BaseCard.vue';
+import BaseAlert from './components/BaseAlert.vue';
 
 export default {
   name: 'App',
@@ -32,8 +19,9 @@ export default {
     // TheForm,
     // TheComputed,
     // TheWatch
-    BaseCard
-  }, 
+    // BaseCard
+    BaseAlert
+  },
   data() {
     return {
       showHeader: true,
