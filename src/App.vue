@@ -1,5 +1,5 @@
 <template>
-  <BaseAlert variant="sucess">
+  <BaseAlert variant="sucess" @close="onClose" v-if="!closed">
     Houve um erro!
   </BaseAlert>
 </template>
@@ -28,7 +28,13 @@ export default {
       name: 'Welen',
       lastName: 'Almeida',
       showName: true,
-      accessLevel: ''
+      accessLevel: '',
+      closed: false
+    }
+  },
+  methods: {
+    onClose() {
+      this.closed = true;
     }
   },
   mounted() {
